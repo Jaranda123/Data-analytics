@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <title>Sales &amp; Inventory</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="auth" class="auth hidden"></div>
+
+  <div id="app" class="app hidden">
+    <aside class="side">
+      <div class="brand" id="brand">Store</div>
+      <nav id="nav"></nav>
+      <div class="side-foot">
+        <div id="net" class="net">● Online</div>
+        <div id="who" class="muted"></div>
+        <button class="ghost" id="logout">Log out</button>
+      </div>
+    </aside>
+    <main id="main"></main>
+  </div>
+
+  <div id="modal" class="modal hidden"></div>
+  <div id="toast"></div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(console.warn));
+    }
+  </script>
+</body>
+</html>
